@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>Register</mat-card-title>
+
+  <div *ngIf="registerMessage" style="color: red; margin-bottom: 15px;">
+    {{ registerMessage }}
+  </div>
+
+
+  <mat-card-content>
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter your username" [(ngModel)]="username" name="username">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Enter your password" [(ngModel)]="password" name="password">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select [(ngModel)]="selectedRole" name="role">
+          <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="register()">Register</button>
+  </mat-card-actions>
+</mat-card>

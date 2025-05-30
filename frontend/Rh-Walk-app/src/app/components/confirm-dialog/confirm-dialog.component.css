@@ -1,0 +1,22 @@
+mat-dialog-content {
+  font-size: 16px;
+  color: #333;
+  padding-top: 10px;
+}
+
+mat-dialog-actions {
+  margin-top: 20px;
+}
+
+button {
+  min-width: 80px;
+}
+
+button[color="warn"] {
+  background-color: #f44336;
+  color: white;
+}
+
+button[color="warn"]:hover {
+  background-color: #d32f2f;
+}

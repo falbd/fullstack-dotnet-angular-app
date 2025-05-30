@@ -1,0 +1,39 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Edit Region' : 'Add Region' }}</h2>
+
+  <div *ngIf="regionMessage" style="color: red; margin-bottom: 15px;">
+    {{ regionMessage }}
+  </div>
+
+  <!-- Back Button -->
+  <button mat-stroked-button color="accent" (click)="goBack()" style="margin-bottom: 20px;">
+    go back
+  </button>
+
+  <form [formGroup]="regionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Region Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="regionForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Region Code</mat-label>
+      <input matInput formControlName="code" />
+      <mat-error *ngIf="regionForm.get('code')?.hasError('required')">
+        Code is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Region Image URL</mat-label>
+      <input matInput formControlName="regionImageUrl" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      {{ isEditMode ? 'Update Region' : 'Add Region' }}
+    </button>
+  </form>
+</div>

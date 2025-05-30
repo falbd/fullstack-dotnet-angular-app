@@ -1,0 +1,18 @@
+# === .NET Core ===
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# === Angular ===
+frontend/node_modules/
+frontend/dist/
+
+# === Logs and Environment ===
+*.log
+*.env
+.env.local
+
+# === System Files ===
+.DS_Store
+Thumbs.db

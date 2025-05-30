@@ -1,0 +1,47 @@
+mat-card {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 32px 42px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+mat-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+mat-card-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #3f51b5;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #3f51b5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}

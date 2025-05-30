@@ -1,0 +1,17 @@
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+mat-header-cell, mat-cell {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.mat-snack-bar-container {
+  top: 20px !important;
+  bottom: auto !important;
+  justify-content: center; 
+}

@@ -1,0 +1,72 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Edit Walk' : 'Add Walk' }}</h2>
+
+  <div *ngIf="walkMessage" style="color: red; margin-bottom: 15px;">
+    {{ walkMessage }}
+  </div>
+
+
+  <button mat-stroked-button color="accent" (click)="goBack()" style="margin-bottom: 20px;">
+    go back
+  </button>
+
+  <form [formGroup]="walkForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Walk Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="walkForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-error *ngIf="walkForm.get('description')?.hasError('required')">
+        Description is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Length (Km)</mat-label>
+      <input matInput type="number" formControlName="lengthInKm" />
+      <mat-error *ngIf="walkForm.get('lengthInKm')?.hasError('required')">
+        Length is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Walk Image URL</mat-label>
+      <input matInput formControlName="walkImageUrl" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Difficulty</mat-label>
+      <mat-select formControlName="difficultyId">
+        <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty.id">
+          {{ difficulty.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="walkForm.get('difficultyId')?.hasError('required')">
+        Difficulty is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Region</mat-label>
+      <mat-select formControlName="regionId">
+        <mat-option *ngFor="let region of regions" [value]="region.id">
+          {{ region.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="walkForm.get('regionId')?.hasError('required')">
+        Region is required
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      {{ isEditMode ? 'Update Walk' : 'Add Walk' }}
+    </button>
+  </form>
+</div>
+

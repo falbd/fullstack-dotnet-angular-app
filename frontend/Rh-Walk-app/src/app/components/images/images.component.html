@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>Upload Image</mat-card-title>
+
+  <form (ngSubmit)="uploadImage()">
+
+  <button mat-stroked-button color="accent" (click)="goBack()" style="margin-bottom: 20px;">
+    go back
+  </button>
+    <!-- Native File Input (No matInput here) -->
+    <label>Select Image</label>
+    <input type="file" (change)="onFileSelected($event)" required>
+
+    <!-- File Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>File Name</mat-label>
+      <input matInput [(ngModel)]="fileName" name="fileName" required>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="fileDescription" name="fileDescription"></textarea>
+    </mat-form-field>
+
+    <!-- Upload Button -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="!selectedFile || !fileName">
+      Upload
+    </button>
+  </form>
+</mat-card>

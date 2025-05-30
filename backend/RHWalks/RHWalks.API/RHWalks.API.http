@@ -1,0 +1,6 @@
+@RHWalks.API_HostAddress = http://localhost:5033
+
+GET {{RHWalks.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

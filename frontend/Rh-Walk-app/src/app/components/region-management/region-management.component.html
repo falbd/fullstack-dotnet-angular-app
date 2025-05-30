@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+  <span class="centered-title">Dashboard</span>
+
+  <!-- Push right-side elements -->
+  <span class="spacer"></span>
+
+  <span>User Role: {{ userRole }}</span>
+  <button mat-button (click)="logout()">Logout</button>
+</mat-toolbar>
+
+
+<div class="content">
+  <section>
+    <div class="section-header">
+      <h2>Regions</h2>
+      <div class="button-group">
+        <button mat-raised-button color="accent" (click)="goToDashboard()">Dashboard</button>
+        <button mat-raised-button color="accent" (click)="addRegion()">Add Region</button>
+
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline" class="filter-field">
+      <mat-label>Filter Regions</mat-label>
+      <input matInput (keyup)="applyRegionFilter($event)" placeholder="Search Regions">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="regionsDataSource" class="mat-elevation-z8">
+      <!-- Columns -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="centered-cell"> Region Name </th>
+        <td mat-cell *matCellDef="let region" class="centered-cell"> {{ region.name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef class="centered-cell"> Region Code </th>
+        <td mat-cell *matCellDef="let region" class="centered-cell"> {{ region.code }} </td>
+      </ng-container>
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef class="centered-cell"> Actions </th>
+    <td mat-cell *matCellDef="let region">
+      <button mat-icon-button color="primary" (click)="editRegion(region)" class="centered-cell">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteRegion(region)" class="centered-cell">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #regionsPaginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+  </section>
