@@ -50,6 +50,10 @@ ng serve
 The app will run at: http://localhost:4200
 
 ---
+## 📚 Acknowledgement
+
+This project is based on a course from [Udemy](https://www.udemy.com/).  
+I extended and customized it to deepen my understanding of full-stack development.
 
 ## 👨‍💻 Author
 
