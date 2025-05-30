@@ -25,8 +25,8 @@ This is a full-stack CRUD web application built using **ASP.NET Core Web API** f
 ---
 ## 📂 Folder Structure
 RH-Walk-App/
-├── backend/ # ASP.NET Core Web API
-├── frontend/ # Angular app
+├── backend/       # ASP.NET Core Web API
+├── frontend/      # Angular app
 ├── .gitignore
 └── README.md
 
