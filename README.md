@@ -7,7 +7,7 @@ This is a full-stack CRUD web application built using **ASP.NET Core Web API** f
 ## 🛠️ Tech Stack
 
 - **Backend**: ASP.NET Core Web API (.NET 8), Entity Framework Core
-- **Frontend**: Angular (latest), TypeScript, HTML, SCSS
+- **Frontend**: Angular (latest), TypeScript, HTML, CSS
 - **Database**: SQL Server
 - **Tools**: Visual Studio, VS Code, Postman
 
@@ -25,8 +25,8 @@ This is a full-stack CRUD web application built using **ASP.NET Core Web API** f
 ---
 ## 📂 Folder Structure
 RH-Walk-App/
-├── backend/       # ASP.NET Core Web API
-├── frontend/      # Angular app
+├── backend/ # ASP.NET Core Web API
+├── frontend/ # Angular app
 ├── .gitignore
 └── README.md
 
