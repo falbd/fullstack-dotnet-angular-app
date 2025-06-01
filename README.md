@@ -11,6 +11,15 @@ This is a full-stack CRUD web application built using **ASP.NET Core Web API** f
 - **Database**: SQL Server
 - **Tools**: Visual Studio, VS Code, Postman
 
+## 🗄 SQL Seed Data
+
+This project includes SQL Server seed data for development and testing.
+
+- `sql/seed-data.sql`: Inserts sample regions, difficulties, and walks.
+- No backend required to run Angular – this is for .NET Core backend setup (if needed).
+
+Run in SQL Server Management Studio or any compatible SQL tool.
+
 ---
 
 ## 🚀 Features
